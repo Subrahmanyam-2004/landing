@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Landing Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+  background-color:whitesmoke;  
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:#8AAAE5;
+    text-align: center;
+    padding: 50px 0;
+}
+header p {
+color: white;
+}
+
+header h1 {
+    color: white;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Landing Page</h1>
+        <p>This is a basic example of a landing page</p>
+    </header>
+    
+    <section id="cta">
+        <h2>Sign up for our newsletter</h2>
+        <form id="signup-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+<center>
+    
+        <b><p>&copy; Basic Landing Page. All rights reserved.</p></b>
+</center>
+    <script>
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var email = document.querySelector('input[type="email"]').value;
+        if (validateEmail(email)) {
+            alert('Thank you for signing up!');
+            document.getElementById('signup-form').reset();
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    });
+    
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+    </script>
+</body>
+</html>
